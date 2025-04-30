@@ -121,6 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				const yorksScore = document.querySelector("#york-score-val");
 				lancsScore.innerText = lancaster;
 				yorksScore.innerText = york;
+				if (lancaster >= 172.5){
+					lancsScore.classList.add("winner");
+				}else if (york >= 172.5){
+					yorksScore.classList.add("winner");
+				}
 			})
 	}
 
