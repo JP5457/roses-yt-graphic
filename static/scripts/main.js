@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const updateLatestScores = () => {
 		// url is /getrecentscores
-		fetch("/getrecentscores?limit=5")
+		fetch("/getrecentscores?limit=6")
 			.then(response => response.json())
 			.then(data => {
 				const scoresList = document.getElementById("fixtures-list-scores");
