@@ -127,12 +127,12 @@ a {
 	height: 100%;
 }
 
-.column-content .waveform {
-	border: solid 1px black;
+/* .column-content .waveform { */
+	/* border: solid 1px black;
 	aspect-ratio: 1/1;
 	width: 100%;
-	max-height: 50vh;
-}
+	max-height: 50vh; */
+/* } */
 
 .column-content .now-playing {
 	color: white;
