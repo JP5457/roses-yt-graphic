@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 					const fixtureItem = document.createElement("div");
 					fixtureItem.className = "fixture-item";
 					fixtureItem.innerHTML = `
-						<h3>${title}</h3>
+						<h3>${title}</h3>-
 						<p>${category}</p>
-						<p>Until ${endString}</p>
+						<p><em>Ends ${endString}</em></p>
 					`;
 					const fixtureContainer = document.createElement("div");
 					fixtureContainer.className = "fixture-container";
@@ -113,15 +113,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			.catch((error) => console.error("Error fetching now playing:", error));
 	}
 
+	const updateLiveScores = () => {
+		fetch("/getscores")
+			.then(response => response.json())
+			.then(({york, lancaster}) => {
+				const lancsScore = document.querySelector("#lancs-score-val");
+				const yorksScore = document.querySelector("#york-score-val");
+				lancsScore.innerText = lancaster;
+				yorksScore.innerText = york;
+			})
+	}
 
-	// inital runs
+
+	// Run these on load
 	updateNowPlaying();
 	updateFixturesList();
 	updateLatestScores();
+	updateLiveScores();
 
 	setInterval(() => {
 		updateNowPlaying();
 		updateFixturesList();
+		updateLatestScores();
+		updateLiveScores();
 	}, 5000); // 5 seconds
 
 });

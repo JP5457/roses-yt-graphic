@@ -64,11 +64,21 @@ a {
 
 .score-cont {
 	background: var(--red);
+	
+}
+
+.score-cont .top {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 35px;
+	padding-top: 10px;	
+}
+
+.score-cont > p {
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .score {
@@ -76,6 +86,20 @@ a {
 	flex-flow: column;
 	justify-items: end;
 	width: 50%;
+}
+
+.winner::after {
+	content: "🎉";
+	right: 50px;
+	display: inline;
+	/* width: 100%; */
+	font-size: 50px;
+	left: 10px;
+	position: relative;
+}
+
+.winner {
+	color: gold
 }
 
 .york-score {
@@ -122,7 +146,7 @@ a {
 	border-radius: 10px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	color: black;
-	margin: 35px;
+	margin: 0 35px;
 	width: 100%;
 	height: 100%;
 }
@@ -146,12 +170,22 @@ a {
 	display: flex;
 	flex-flow: row;
 	align-items: center;
+	margin-bottom: 5px;
 }
 
 .fixture-item {
 	/* border: 5px solid var(--red); */
 	padding: 5px;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
+}
+
+.v-line {
+	border-left: 1px solid var(--red);
+	height: 100%;
+}
+
+.fixture-item h3, .fixture-item p {
+	display: inline;
 }
 
 .fixture-bullet {
