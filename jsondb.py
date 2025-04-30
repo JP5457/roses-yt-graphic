@@ -12,7 +12,7 @@ class Jsondb:
             with open("/opt/notice.json", 'w') as file:
                 file.write("{}") 
             data = self.get_data()
-            data["active"] = {"category":"","end":"Wed, 30 Apr 2025 11:01:55 GMT","start":"Wed, 30 Apr 2025 11:01:55 GMT","title":"Continuity"}
+            data["active"] = {"category":"","end":"Wed, 30 Apr 2025 11:01:55 GMT","start":"Wed, 30 Apr 2025 11:01:55 GMT","title":"Continuity", "id": ""}
             self.save_data(data)
 
     def get_data(self):
