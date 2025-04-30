@@ -140,3 +140,29 @@ a {
 	margin: 20px 0;
 	padding: 10px;
 }
+
+.fixture-container{
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+}
+
+.fixture-item {
+	/* border: 5px solid var(--red); */
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.fixture-bullet {
+	content: "";
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+	border-radius: 100%;
+	background-color: var(--red);
+}
+
+#fixtures-list {
+	max-height: 60vh;
+}
