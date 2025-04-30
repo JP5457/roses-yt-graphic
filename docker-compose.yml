@@ -1,16 +1,12 @@
 services:
-    noticeboard:
+    rosesyt:
         build: .
-        image: noticeboard:latest
-        container_name: noticeboard_container
+        image: rosesyt:latest
+        container_name: rosesyt_container
         volumes:
             - ./static:/app/static
             - ./templates:/app/templates
-            - plankstore:/opt/
         ports:
-            - "5042:5042"
+            - "5047:5047"
         environment:
-            - MYRADIO_API_KEY=${MYRADIO_API_KEY}#
-            - MYRADIO_SIGNING_KEY=${MYRADIO_SIGNING_KEY}
-volumes:
-    plankstore:
+            - FIXTURE_URL=${FIXTURE_URL}

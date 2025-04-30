@@ -9,102 +9,55 @@
 	href="{{ url_for('static', filename='css/background.css') }}"
 />
 <body>
-    <div id="sliding-background1" class="sliding-background" style="z-index: -2"></div>
-    <div
-        id="sliding-background2"
-        class="sliding-background"
-        style="z-index: -1"
-    ></div>
+	<div
+		id="sliding-background1"
+		class="sliding-background"
+		style="z-index: -2"
+	>
+		<div class="layer"></div>
+	</div>
+	<div
+		id="sliding-background2"
+		class="sliding-background"
+		style="z-index: -1"
+	>
+		<div class="layer"></div>
+	</div>
 	<div class="container">
 		<div class="thincolumn">
-            <div class="contentbox">
+			<div class="contentbox">
 				<h1 id="brokenlabel">Something Broken?</h1>
-                <div id="brokenhtml"></div>
+				<div id="brokenhtml"></div>
 			</div>
-            <div class="contentbox">
+			<div class="contentbox">
 				<h1 id="joinlabel"></h1>
 				<div id="joinhtml"></div>
 			</div>
-            <div class="contentbox">
+			<div class="contentbox">
 				<h2 id="listenlabel"></h2>
 				<div id="listenhtml"></div>
 			</div>
-            <div class="contentbox" id="extrabox">
+			<div class="contentbox" id="extrabox">
 				<h2 id="extralabel"></h2>
 				<div id="extrahtml"></div>
 			</div>
-            <div class="contentbox">
-				<h3 id="welfarelabel"></h3>
-                <div id="welfarehtml"></div>
-			</div>
-		</div>
-
-		<div class="thincolumn">
-            <div class="contentbox">
-				<h1 id="bannerlabel"></h1>
-			</div>
-            <div class="contentbox">
-				<h2 id="meetinglabel">Meeting Times</h2>
-				<div id="meetinghtml"></div>
-			</div>
-            <div class="contentbox">
-				<div id="committeehtml"></div>
-                <div id="positions"></div>
-                <div class = "parent">
-                    <div id="openpos1" style="opacity: 0"></div>
-                    <div id="openpos2"></div>
-                    <div id="openpos3" style="opacity: 0"></div>
-                    <div id="openpos4" style="opacity: 0"></div>
-                </div>
-			</div>
-		</div>
-
-		<div class="thickcolumn">
 			<div class="contentbox">
-				<h2 id="eventtitle"></h1>
-				<h3 class="showtime" id="eventtime"></h3>
-                <div id="eventdesc"><p>
-                </p></div>
-			</div>
-			<div class="outer">
-				<div class="inner" id="box1">
-					<div class="contentbox">
-						<h2 id="showlabel1"></h2>
-						<img
-							id="showart1"
-							class="showimg"
-							src="{{ url_for('static', filename='images/default_show_profile.png') }}"
-						/>
-						<h3 id="showtitle1">Title</h3>
-						<h4 id="showtime1" class="showtime">Time</h4>
-						<p id="showdesc1" class="showdesc">Description</p>
-					</div>
-				</div>
-				<div class="inner" id="box2" style="opacity: 0">
-					<div class="contentbox">
-						<h2 id="showlabel2"></h2>
-						<img
-							id="showart2"
-							class="showimg"
-							src="{{ url_for('static', filename='images/default_show_profile.png') }}"
-						/>
-						<h3 id="showtitle2">Title</h3>
-						<h4 id="showtime2" class="showtime">Time</h4>
-						<p id="showdesc2" class="showdesc">Description</p>
-					</div>
-				</div>
+				<h3 id="welfarelabel"></h3>
+				<div id="welfarehtml"></div>
 			</div>
 		</div>
+
+		<div class="thickcolumn"></div>
 	</div>
 </body>
 <script>
-    let startimage = 1;
+	let startimage = 1;
 </script>
 <script
-src="{{ url_for('static', filename='scripts/background.js') }}"
-type="module"
+	src="{{ url_for('static', filename='scripts/background.js') }}"
+	type="module"
 ></script>
 <script
-src="{{ url_for('static', filename='scripts/main.js') }}"
-type="module"
+	src="{{ url_for('static', filename='scripts/main.js') }}"
+	type="module"
 ></script>

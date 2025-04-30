@@ -1,71 +1,20 @@
-<h2>Edit Noticeboard</h2>
-<form action="" method="post" novalidate>
-	<p>
-		{{ form.brokenlabel.label }}<br />
-		{{ form.brokenlabel(width="60") }}
-	</p>
-	<p>
-		{{ form.brokenhtml.label }}<br />
-		{{ form.brokenhtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.joinlabel.label }}<br />
-		{{ form.joinlabel(width="60") }}
-	</p>
-	<p>
-		{{ form.joinhtml.label }}<br />
-		{{ form.joinhtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.listenlabel.label }}<br />
-		{{ form.listenlabel(width="60") }}
-	</p>
-	<p>
-		{{ form.listenhtml.label }}<br />
-		{{ form.listenhtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.extralabel.label }}<br />
-		{{ form.extralabel(width="60") }}
-	</p>
-	<p>
-		{{ form.extrahtml.label }}<br />
-		{{ form.extrahtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.welfarelabel.label }}<br />
-		{{ form.welfarelabel(width="60") }}
-	</p>
-	<p>
-		{{ form.welfarehtml.label }}<br />
-		{{ form.welfarehtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.bannerlabel.label }}<br />
-		{{ form.bannerlabel(width="60") }}
-	</p>
-	<p>
-		{{ form.meetinglabel.label }}<br />
-		{{ form.meetinglabel(width="60") }}
-	</p>
-	<p>
-		{{ form.meetinghtml.label }}<br />
-		{{ form.meetinghtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.committeehtml.label }}<br />
-		{{ form.committeehtml(cols="60", rows="15") }}
-	</p>
-	<p>
-		{{ form.showlabel.label }}<br />
-		{{ form.showlabel(width="60") }}
-	</p>
-	<p>
-		{{ form.refresh.label }}<br />
-		{{ form.refresh(width="60") }}
-	</p>
-
-	<p>{{ form.submit() }}</p>
-	<br />
-	<br />
-</form>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Select a Fixture</title>
+	</head>
+	<body>
+		<h1>Select a Fixture</h1>
+		<form method="POST">
+			<label for="fixture">Choose a fixture:</label>
+			<select name="fixture" id="fixture">
+				{% for fixture in fixtures %}
+				<option value="{{ fixture.id }}">
+					{{ fixture.title }} ({{ fixture.category }})
+				</option>
+				{% endfor %}
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
