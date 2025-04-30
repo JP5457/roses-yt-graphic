@@ -1,6 +1,7 @@
 :root {
-	--red: rgba(199, 49, 32, 1);
+	--red: #c73120;
 	--text-color: #ffffff;
+	--pink: rgb(255, 222, 228);
 }
 
 @font-face {
@@ -165,4 +166,43 @@ a {
 
 #fixtures-list {
 	max-height: 60vh;
+}
+
+.fix-score-cont {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
+
+.fix-score-cont.lancs-win {
+	background-color: var(--red);
+	color: white;
+}
+
+.fix-score-cont.york-win {
+	background-color: white;
+	color: black;
+}
+
+.fix-score-cont.no-win {
+	background-color: var(--pink);
+	color: black;
+}
+
+.team-score {
+	text-align: center;
+}
+
+.fix-score-cont .top {
+	text-align: center;
+}
+
+.fix-score-cont .top .fix-title {
+	font-weight: bolder;
+	font-size: 1.2em;
 }

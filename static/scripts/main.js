@@ -41,10 +41,83 @@ document.addEventListener("DOMContentLoaded", () => {
 			.catch((error) => console.error("Error fetching now playing:", error));
 	}
 
+	const createScoreCard = (sport, category, yorkScore, lancasterScore, parentSelector) => {
+		const container = document.createElement('div');
+	  
+		// Determine result class
+		let resultClass = 'no-win';
+		if (yorkScore > lancasterScore) {
+		  resultClass = 'york-win';
+		} else if (lancasterScore > yorkScore) {
+		  resultClass = 'lancs-win';
+		}
+	  
+		container.className = `fix-score-cont ${resultClass}`;
+	  
+		const topDiv = document.createElement('div');
+		topDiv.className = 'top';
+	  
+		const titleSpan = document.createElement('span');
+		titleSpan.className = 'fix-title';
+		titleSpan.textContent = String(sport) + " ";
+	  
+		const categorySpan = document.createElement('span');
+		categorySpan.className = 'fix-category';
+		categorySpan.textContent = category;
+	  
+		topDiv.appendChild(titleSpan);
+		topDiv.appendChild(categorySpan);
+	  
+		const bottomDiv = document.createElement('div');
+		bottomDiv.className = 'bottom';
+	  
+		const scoreHeading = document.createElement('h3');
+		scoreHeading.className = 'team-score';
+	  
+		const yorkSpan = document.createElement('span');
+		yorkSpan.className = 'york';
+		yorkSpan.textContent = `York - ${yorkScore}`;
+	  
+		const lancasterSpan = document.createElement('span');
+		lancasterSpan.className = 'lancaster';
+		lancasterSpan.textContent = `Lancaster - ${lancasterScore}`;
+	  
+		scoreHeading.appendChild(yorkSpan);
+		scoreHeading.append(' | ');
+		scoreHeading.appendChild(lancasterSpan);
+	  
+		bottomDiv.appendChild(scoreHeading);
+	  
+		container.appendChild(topDiv);
+		container.appendChild(bottomDiv);
+	  
+		const parent = document.querySelector(parentSelector);
+		if (parent) {
+		  parent.appendChild(container);
+		} else {
+		  console.warn('Parent element not found');
+		}
+	}
+
+	const updateLatestScores = () => {
+		// url is /getrecentscores
+		fetch("/getrecentscores?limit=5")
+			.then(response => response.json())
+			.then(data => {
+				const scoresList = document.getElementById("fixtures-list-scores");
+				scoresList.innerHTML = ""; // Clear existing scores
+				data.forEach(({title, category, york, lancaster}) => {
+					createScoreCard(title, category, york, lancaster, '#fixtures-list-scores');
+				});
+			})
+			.catch((error) => console.error("Error fetching now playing:", error));
+	}
+
 
 	// inital runs
 	updateNowPlaying();
 	updateFixturesList();
+	updateLatestScores();
 
 	setInterval(() => {
 		updateNowPlaying();
