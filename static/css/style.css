@@ -1,7 +1,7 @@
 :root {
 	--red: #c73120;
 	--text-color: #ffffff;
-	--pink: rgb(255, 222, 228);
+	--pink: #f7d6e0;
 }
 
 @font-face {
@@ -18,8 +18,34 @@ body {
 	color: var(--text-color);
 }
 
+* {
+	font-size: 1.15rem;
+}
+
+.fades {
+	position: absolute;
+	opacity: 1;
+	transition: opacity 1s;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	min-width: 100% !important;
+	max-width: 100% !important;
+}
+
+.fadeslist {
+	position: absolute;
+	opacity: 1;
+	transition: opacity 1s;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	min-width: 100% !important;
+	max-width: 100% !important;
+}
+
 .layer {
-	background-color: rgba(248, 248, 248, 0.7);
+	background-color: rgba(248, 248, 248, 0.3);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -30,11 +56,13 @@ body {
 h1 {
 	margin: 0px;
 	font-weight: 700;
+	font-size: 2rem;
 }
 
 h2 {
 	margin: 5px 5px 15px 5px;
 	font-weight: 700;
+	font-size: 1.5rem;
 }
 
 h3 {
@@ -60,11 +88,11 @@ a {
 	flex-flow: column;
 	align-items: stretch;
 	margin: 40px;
+	height: 72%;
 }
 
 .score-cont {
 	background: var(--red);
-	
 }
 
 .score-cont .top {
@@ -73,7 +101,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	gap: 35px;
-	padding-top: 10px;	
+	padding-top: 10px;
 }
 
 .score-cont > p {
@@ -99,7 +127,7 @@ a {
 }
 
 .winner {
-	color: gold
+	color: gold;
 }
 
 .york-score {
@@ -118,6 +146,12 @@ a {
 
 .pad {
 	padding: 35px;
+	min-width: 90% !important;
+	max-width: 90% !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .container .column {
@@ -136,6 +170,8 @@ a {
 	background-color: var(--red);
 	text-align: center;
 	width: 100%;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
 .column-content {
@@ -143,7 +179,6 @@ a {
 	/* frosted glass effect */
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	border-radius: 10px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	color: black;
 	margin: 0 35px;
@@ -151,12 +186,15 @@ a {
 	height: 100%;
 }
 
-/* .column-content .waveform { */
-	/* border: solid 1px black;
-	aspect-ratio: 1/1;
+.waveform {
+	aspect-ratio: 2/1;
 	width: 100%;
-	max-height: 50vh; */
-/* } */
+	max-height: 50vh;
+	background-color: rgba(255, 255, 255, 0.4);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 
 .column-content .now-playing {
 	color: white;
@@ -166,17 +204,25 @@ a {
 	padding: 10px;
 }
 
-.fixture-container{
+.fixture-container {
 	display: flex;
 	flex-flow: row;
 	align-items: center;
 	margin-bottom: 5px;
+	font-size: 1.5em;
+	min-width: 90%;
+	max-width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .fixture-item {
 	/* border: 5px solid var(--red); */
 	padding: 5px;
 	/* margin-bottom: 10px; */
+	max-width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .v-line {
@@ -184,7 +230,8 @@ a {
 	height: 100%;
 }
 
-.fixture-item h3, .fixture-item p {
+.fixture-item h3,
+.fixture-item p {
 	display: inline;
 }
 
@@ -202,6 +249,10 @@ a {
 	max-height: 60vh;
 }
 
+#catchup-list {
+	max-height: 60vh;
+}
+
 .fix-score-cont {
 	display: flex;
 	flex-flow: column;
@@ -211,6 +262,10 @@ a {
 	padding: 10px;
 	margin-bottom: 10px;
 	border: 1px solid black;
+	min-width: 100% !important;
+	max-width: 100% !important;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .fix-score-cont.lancs-win {
@@ -239,4 +294,49 @@ a {
 .fix-score-cont .top .fix-title {
 	font-weight: bolder;
 	font-size: 1.2em;
+}
+
+.bar-container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	max-width: 1000px;
+	height: 30px;
+	display: flex;
+}
+
+.bar-section {
+	height: 100%;
+	transition: width 0.6s ease;
+}
+
+.section1 {
+	background-color: var(--text-color);
+}
+.section2 {
+	background-color: var(--red);
+}
+.section3 {
+	background-color: var(--text-color);
+}
+
+.bigcolumn {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100% !important;
+}
+
+.center-divider {
+	position: absolute;
+	left: 50%;
+	top: -10px; /* Slightly above the bar */
+	min-height: 50px;
+	height: 50px; /* Slightly taller than 30px bar */
+	width: 3px;
+	background-color: #000000;
+	z-index: 1;
+	pointer-events: none;
+	border-radius: 1px;
 }

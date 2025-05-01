@@ -1,10 +1,10 @@
-IMAGE="evergiven.ury.york.ac.uk:5000/noticeboard"
-CONTAINER="noticeboard"
-PROJECTDIR="/opt/noticeboard"
+IMAGE="evergiven.ury.york.ac.uk:5000/rosesyt"
+CONTAINER="rosesyt"
+PROJECTDIR="/opt/rosesyt"
 LOGDIR="/mnt/logs/"
-PORT=5042
+PORT=5047
 DATE=$(date +%s)
 
 docker build -t $IMAGE:$DATE .
 docker push $IMAGE:$DATE
-docker service update --image $IMAGE:$DATE noticeboard-2
+docker service update --image $IMAGE:$DATE rosesyt

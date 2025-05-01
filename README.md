@@ -1,20 +1,6 @@
-# Noticeboard-2
+# Roses-yt-graphics
 
-Noticeboard? No I didn't see any planks
-
-# This is a board for notices
-
-You can see it in studio red or noticeboard.ury.org.uk
-
-It uses the myradio api to dynamically update open positions and upcoming events and also to recommend some of our shows.
-
-It also has a CMS webpage thing where you can edit the rest of the page.
-
-# How do I use it?
-
-go to noticeboard.ury.org.uk and put it on your screen its not hard
-
-if you are a comp officer or have the edit banner permission then you can also use noticeboard.ury.org.uk/edit to update it
+Very heavily based on noticeboard-2
 
 # Development
 

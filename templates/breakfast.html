@@ -54,9 +54,9 @@
 			<p>172.5 needed to win</p>
 		</div>
 		<div class="container">
-			<div class="column">
+			<div class="column" style="width: 40%;">
 				<div class="title">
-					<h2>Live Now</h2>
+					<h2>Coming Up</h2>
 				</div>
 				<div class="column-content">
 					<div class="fadeslist" id="fixtures-list-1">
@@ -70,53 +70,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="title">
-					<h2>You Just Missed</h2>
-				</div>
-				<br />
-				<div class="column-content">
-					<div class="fadeslist" id="catchup-list-1">
-						<div class="pad" id="catchlist-1">
-							<p>Loading...</p>
-						</div>
-					</div>
-					<div class="fadeslist" id="catchup-list-2">
-						<div class="pad" id="catchlist-2">
-							<p>Loading...</p>
-						</div>
-					</div>
-				</div>
 			</div>
-
-			<div class="column">
-				<div class="title">
-					<h2>Latest Scores</h2>
-				</div>
-				<div class="column-content">
-					<div class="fades" id="scores-1">
-						<div class="pad" id="fixtures-list-scores-1">
-							<p>Loading...</p>
-						</div>
-					</div>
-					<div class="fades" id="scores-2">
-						<div class="pad" id="fixtures-list-scores-2">
-							<p>Loading...</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="column" style="width: 40%;">
+			<div class="column" style="width: 60%; min-width: 60%;">
 				<div class="bigcolumn" style="min-width: 100%;">
 					<div class="title">
-						<h2>Get scores, coverage and more at</h2>
+						<h2>You can find scores, coverage and more at</h2>
 						<h1>Roseslive.co.uk</h1>
 					</div>
-                    <div class="waveform">
+                    <div class="waveform" style="aspect-ratio: 3/1;">
                     </div>
 					<div class="title">
-                        <h1 >Now Live:</h1>
-						<h1 id="nowPlaying">Coverage</h1>
+                        <h1 style="font-size: 4em;">Roses Breakfast</h1>
 					</div>
                 </div>
             </div>
@@ -132,6 +96,6 @@
 	type="module"
 ></script>
 <script
-	src="{{ url_for('static', filename='scripts/main.js') }}"
+	src="{{ url_for('static', filename='scripts/breakfast.js') }}"
 	type="module"
 ></script>
