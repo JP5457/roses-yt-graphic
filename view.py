@@ -140,15 +140,12 @@ def edit():
         try:
             if i["coverage"] == "RadioCoverage" and i["live"] == True:
                 if i["id"] != jsondb.get_active()["id"]:
-                    fix = {"title": i["fixture"]["sport"], "category": i["fixture"]["name"]}
+                    fix = {"title": i["fixture"]["sport"], "category": i["fixture"]["name"], "id" = i["id"]}
                     ongoing.append(fix)
         except:
             continue
 
-    toret = []
-    for i in ongoing:
-        fix = {"title": i["sport"]["name"], "category": i["teams"][0]["team"]["name"], "start": i["startsAt"], "id":i["id"]}
-        toret.append(fix)
+    toret = ongoing
 
     if request.method == 'POST':
         print(fixture, file=sys.stderr)
