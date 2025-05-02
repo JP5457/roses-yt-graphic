@@ -175,10 +175,16 @@ def getrecentscores():
 
     completed_scores = []
 
+    print(fixtures[140], file=sys.stderr)
+
     for event in fixtures:
+
         if event.get("status") != "Complete":
             continue  # Skip events that haven't been completed
-        
+
+        if event["id"] == "cm7vyoggn00j0hicp6yfea8hf":
+            continue
+
         points_entry = event.get("competitionPoints", [])
 
         team_scores_york = points_entry[0]["points"]
@@ -188,12 +194,15 @@ def getrecentscores():
 
         fixture = {"york": team_scores_york, "lancaster": team_scores_lancaster, "title": event["sport"]["name"], "category": event["teams"][0]["team"]["name"], "endsAt": end}
 
+        if event["id"] == "cm7vyoggz00lphicpfn29vdk9":
+            print(fixture, file=sys.stderr)
+
         completed_scores.append(fixture)
 
     completed_scores.sort(key=lambda x: x["endsAt"], reverse=True)
 
-    # Return only the 5 most recent scores (excluding 'endsAt' in output if not needed)
-    return [{k: v for k, v in score.items() if k != "endsAt"} for score in completed_scores[:6]]
+    return completed_scores[:6]
+    # Return only the 6 most recent scores (excluding 'endsAt' in output if not needed)
 
 from flask import jsonify
 from datetime import datetime, timezone

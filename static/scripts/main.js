@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			catchupContainer.appendChild(catchupItem);
 			catchupList.appendChild(catchupContainer);
 		});
-		document.getElementById("catchup-list-" + shownfixtures).style =
+		document.getElementById("catchup-list-" + showncatchup).style =
 			"opacity: 0";
 		document.getElementById("catchup-list-" + toswap).style = "opacity: 1";
 		showncatchup = toswap;
