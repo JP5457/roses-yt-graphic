@@ -140,7 +140,7 @@ def edit():
         try:
             if i["coverage"] == "RadioCoverage" and i["live"] == True:
                 if i["id"] != jsondb.get_active()["id"]:
-                    fix = {"title": i["fixture"]["sport"], "category": i["fixture"]["name"], "id" = i["id"]}
+                    fix = {"title": i["fixture"]["sport"], "category": i["fixture"]["name"], "id": i["id"]}
                     ongoing.append(fix)
         except:
             continue
@@ -148,7 +148,6 @@ def edit():
     toret = ongoing
 
     if request.method == 'POST':
-        print(fixture, file=sys.stderr)
         selected_fixture = request.form.get('fixture')
         for i in toret:
             if i["id"] == selected_fixture:
